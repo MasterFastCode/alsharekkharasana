@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الشرق لصناعة الخرسانة والطوب الأسمنتي</title>
+    
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F47406', // Orange
+                        dark: '#020202',    // Black
+                        darker: '#000000',
+                        light: '#f3f4f6',
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Tajawal', 'sans-serif';
+            background-color: #f9fafb;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(2,2,2, 0.9), rgba(2,2,2, 0.6));
+        }
+        
+        /* Ensure the logo image maintains aspect ratio and fits the container */
+        .nav-logo {
+            height: 40px; /* Fixed height for the logo container */
+            width: auto;
+            max-width: 100%;
+            display: block;
+        }
+        
+        /* Contact Section layout without map */
+        #contact-container {
+            min-height: 80vh; /* Make the contact section take up more space */
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-dark fixed w-full z-50 shadow-lg border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo and Company Name (Updated to include image) -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <!-- Logo Image Container -->
+                    <div class="h-10 w-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-white/10 p-1">
+                        <!-- Using a generic placeholder image URL structure as the original image path is local -->
+                        <img src="WhatsApp Image 2025-11-18 at 19.22.37.jpeg" alt="شعار شركة الشرق" class="nav-logo object-contain" onerror="this.onerror=null;this.src='https://placehold.co/40x40/F47406/ffffff?text=شعار';">
+                    </div>
+                    <!-- Company Name -->
+                    <span class="text-white text-xl sm:text-2xl font-bold tracking-wider">شركة <span class="text-primary">الشرق</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
+                        <a href="#home" class="text-white hover:text-primary px-3 py-2 rounded-md text-lg font-medium transition">الرئيسية</a>
+                        <a href="#about" class="text-gray-300 hover:text-primary px-3 py-2 rounded-md text-lg font-medium transition">من نحن</a>
+                        <a href="#vision" class="text-gray-300 hover:text-primary px-3 py-2 rounded-md text-lg font-medium transition">رؤيتنا</a>
+                        <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition shadow-lg hover:shadow-orange-500/30">تواصل معنا</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button onclick="toggleMenu()" type="button" class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-gray-900" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-800">
+                <a href="#home" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">الرئيسية</a>
+                <a href="#about" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">من نحن</a>
+                <a href="#vision" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800">رؤيتنا</a>
+                <a href="#contact" class="text-primary block px-3 py-2 rounded-md text-base font-bold hover:bg-gray-800">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Concrete Industry" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-right w-full">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                أساسات صلبة.. <br>
+                <span class="text-primary">لمستقبل واعد</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+                شركة الشرق تقدم أرقى حلول البناء. خرسانة جاهزة وطوب أسمنتي بأعلى معايير الجودة والمتانة لضمان استدامة مشاريعكم.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+                <a href="#contact" class="px-8 py-4 bg-primary text-white font-bold rounded hover:bg-orange-600 transition duration-300 text-lg border border-transparent">
+                    تواصل معنا الآن
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white text-2xl opacity-70">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-10 lg:mb-0 relative">
+                    <!-- Decorative Element -->
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary opacity-20 rounded-full"></div>
+                    <div class="relative rounded-lg overflow-hidden shadow-2xl border-r-8 border-primary">
+                        <img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Construction Site" class="w-full h-full object-cover transform hover:scale-105 transition duration-700">
+                    </div>
+                    <!-- REMOVED: 25+ years of experience block -->
+                </div>
+                
+                <div>
+                    <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">من نحن</h2>
+                    <h3 class="text-4xl font-extrabold text-dark mb-6">الريادة في عالم البناء والصناعات الخرسانية</h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        تأسست شركة الشرق لتلبية الطلب المتزايد على مواد البناء عالية الجودة في المنطقة. نحن متخصصون في إنتاج الخرسانة الجاهزة والطوب الأسمنتي بمختلف أنواعه.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        نعتمد في مصانعنا على أحدث التقنيات الألمانية وخطوط الإنتاج المؤتمتة لضمان دقة المقاسات وقوة التحمل، مما يجعل منتجاتنا الخيار الأول للمهندسين والمقاولين.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span class="mr-3 text-gray-700 font-medium">جودة مطابقة للمواصفات العالمية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span class="mr-3 text-gray-700 font-medium">فريق هندسي متخصص للإشراف</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span class="mr-3 text-gray-700 font-medium">أسطول نقل حديث لضمان المواعيد</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section id="vision" class="py-20 bg-dark relative">
+        <!-- Background Texture -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">رؤيتنا وأهدافنا</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary transition-colors duration-300 group text-center">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-eye text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">رؤيتنا</h3>
+                    <p class="text-gray-400">أن نكون الخيار الأول في قطاع الإنشاءات محلياً وإقليمياً، ونموذجاً يحتذى به في الجودة والابتكار.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary transition-colors duration-300 group text-center transform md:-translate-y-4 shadow-xl shadow-primary/10">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-bullseye text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">مهمتنا</h3>
+                    <p class="text-gray-400">توفير حلول بناء متكاملة من خلال منتجات خرسانية عالية الجودة تساهم في بناء بنية تحتية قوية ومستدامة.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary transition-colors duration-300 group text-center">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <i class="fas fa-gem text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">قيمنا</h3>
+                    <p class="text-gray-400">الالتزام التام بالجودة، المصداقية في التعامل، السلامة المهنية، والتطوير المستمر لكوادرنا.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark text-white relative py-20" id="contact-container">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">تواصل معنا</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold mb-4">نحن هنا لخدمتكم</h3>
+                <p class="text-gray-400 max-w-lg mx-auto">تواصل معنا عبر الهاتف أو البريد الإلكتروني.</p>
+            </div>
+            
+            <!-- Modified grid: changed to lg:grid-cols-1 and added justify-items-center to center content, and max-w-lg w-full to the contact info block -->
+            <div class="lg:grid lg:grid-cols-1 justify-items-center">
+                <!-- Contact Info -->
+                <div class="space-y-6 mb-12 lg:mb-0 max-w-lg w-full">
+                    <div class="flex items-start bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+                        <div class="flex-shrink-0 bg-gray-800 p-3 rounded text-primary">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="text-lg font-bold">اتصل بنا</h4>
+                            <p class="text-gray-400 dir-ltr text-right">0915188851</p>
+                            <p class="text-gray-400 dir-ltr text-right">0914714858</p>
+                            <p class="text-gray-400 dir-ltr text-right">0928157582</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+                        <div class="flex-shrink-0 bg-gray-800 p-3 rounded text-primary">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="text-lg font-bold">موقعنا</h4>
+                            <p class="text-gray-400">الهواري بالقرب من مصنع الاسمنت،</p>
+                            <p class="text-gray-400">بنغازي - ليبيا</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+                        <div class="flex-shrink-0 bg-gray-800 p-3 rounded text-primary">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="text-lg font-bold">البريد الإلكتروني</h4>
+                            <p class="text-gray-400">info@alsharq.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+                        <div class="flex-shrink-0 bg-gray-800 p-3 rounded text-primary">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="mr-4">
+                            <h4 class="text-lg font-bold">ساعات العمل</h4>
+                            <p class="text-gray-400">السبت - الخميس</p>
+                            <p class="text-gray-400">08:00 ص - 06:00 م</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORM REMOVED HERE AS REQUESTED -->
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert" class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full text-center transform scale-95 transition-transform duration-300" id="alert-content">
+            <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+            <p class="text-lg font-semibold text-gray-800 mb-6" id="alert-message">This is a custom alert message.</p>
+            <button onclick="hideCustomAlert()" class="bg-primary hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition duration-300 w-full">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-900 pt-10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <!-- Logo in Footer -->
+                        <div class="h-8 w-8 flex items-center justify-center rounded-lg bg-white/10 p-1">
+                             <img src="https://placehold.co/40x40/F47406/ffffff?text=شعار" alt="شعار شركة الشرق" class="nav-logo object-contain h-full w-full" onerror="this.onerror=null;this.src='https://placehold.co/40x40/F47406/ffffff?text=شعار';">
+                        </div>
+                        <span class="text-white text-xl font-bold">شركة الشرق</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        الخيار الأمثل لمواد البناء والخرسانة الجاهزة. نلتزم بالجودة لنبني مستقبلاً أقوى.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">روابط سريعة</h4>
+                    <ul class="text-gray-500 text-sm space-y-2">
+                        <li><a href="#about" class="hover:text-primary transition">من نحن</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">تابعنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-6 text-center">
+                <p class="text-gray-600 text-sm">&copy; 2023 شركة الشرق. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+
+        // Navbar Background on Scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-opacity-95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('bg-opacity-95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Custom Alert Functions (replacing window.alert)
+        function showCustomAlert(message) {
+            const alertModal = document.getElementById('custom-alert');
+            const alertMessage = document.getElementById('alert-message');
+            alertMessage.textContent = message;
+            alertModal.classList.remove('hidden');
+            document.getElementById('alert-content').classList.remove('scale-95');
+        }
+
+        function hideCustomAlert() {
+            const alertModal = document.getElementById('custom-alert');
+            document.getElementById('alert-content').classList.add('scale-95');
+            setTimeout(() => {
+                alertModal.classList.add('hidden');
+            }, 300); // Matches transition duration
+        }
+    </script>
+</body>
+</html>
